@@ -54,10 +54,7 @@ class _ShoppingCardPageState extends State<ShoppingCardPage> {
                 'Shopping Cart',
                 style: TextStyle(fontSize: 18),
               ),
-              Dismissible(
-                // key: key,
-                child: ShoppingCartWidget(),
-              ),
+              ShoppingCartWidget(),
               SizedBox(
                 height: height * 0.4,
               ),
