@@ -1,7 +1,9 @@
 import 'package:ecommerce/pages/LoginPage.dart';
 import 'package:ecommerce/pages/homePage.dart';
 import 'package:ecommerce/pages/newArrival.dart';
+import 'package:ecommerce/pages/productDetail.dart';
 import 'package:ecommerce/pages/productPage.dart';
+import 'package:ecommerce/pages/shoppingCard.dart';
 import 'package:ecommerce/theme/theme.dart';
 import 'package:flutter/material.dart';
 
@@ -18,7 +20,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: themedata,
-      home: const HomePage(),
+      home: const ShoppingCardPage(),
     );
   }
 }
