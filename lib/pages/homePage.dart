@@ -51,53 +51,59 @@ class _HomePageState extends State<HomePage> {
                 )
               ],
             ),
-            Stack(
-              children: [
-                Center(
-                    child: Image.asset(
-                  'assets/home.png',
-                  width: width,
-                )),
-                Positioned(
-                    left: 40,
-                    top: 10,
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Padding(
-                          padding: const EdgeInsets.only(top: 10.0),
-                          child: Text(
-                            'Welcome,',
-                            style: TextStyle(fontSize: 25, color: Colors.black),
+            Container(
+              height: MediaQuery.of(context).size.height * 0.23,
+              child: Stack(
+                alignment: Alignment.center,
+                children: [
+                  Center(
+                      child: Image.asset(
+                    'assets/home.png',
+                    width: width,
+                  )),
+                  Positioned(
+                      left: 40,
+                      top: 10,
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Padding(
+                            padding: const EdgeInsets.only(top: 10.0),
+                            child: Text(
+                              'Welcome,',
+                              style:
+                                  TextStyle(fontSize: 25, color: Colors.black),
+                            ),
                           ),
-                        ),
-                        Text(
-                          'to Hannoush jewellers',
-                          style: TextStyle(fontSize: 15, color: Colors.black),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.only(top: 8.0),
-                          child: Text(
-                            'WE NEVER STOP CELEBRATING.',
-                            style: TextStyle(fontSize: 11, color: Colors.grey),
+                          Text(
+                            'to Hannoush jewellers',
+                            style: TextStyle(fontSize: 15, color: Colors.black),
                           ),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.only(top: 8.0),
-                          child: ElevatedButton(
-                              style: ElevatedButton.styleFrom(
-                                  backgroundColor: Colors.black),
-                              onPressed: () {},
-                              child: Text(
-                                'Shop Now!',
-                                style: TextStyle(
-                                    color: Colors.white, fontSize: 11),
-                              )),
-                        )
-                      ],
-                    ))
-              ],
+                          Padding(
+                            padding: const EdgeInsets.only(top: 8.0),
+                            child: Text(
+                              'WE NEVER STOP CELEBRATING.',
+                              style:
+                                  TextStyle(fontSize: 11, color: Colors.grey),
+                            ),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.only(top: 8.0),
+                            child: ElevatedButton(
+                                style: ElevatedButton.styleFrom(
+                                    backgroundColor: Colors.black),
+                                onPressed: () {},
+                                child: Text(
+                                  'Shop Now!',
+                                  style: TextStyle(
+                                      color: Colors.white, fontSize: 11),
+                                )),
+                          )
+                        ],
+                      ))
+                ],
+              ),
             ),
             SizedBox(
               height: height * 0.05,
