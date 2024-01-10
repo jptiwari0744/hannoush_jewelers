@@ -34,7 +34,9 @@ class _ProductPageState extends State<ProductPage> {
           FloatingActionButton(
             shape: CircleBorder(),
             backgroundColor: Colors.white,
-            onPressed: () {},
+            onPressed: () {
+              Navigator.pushNamed(context, '/shoppingCart');
+            },
             child: Icon(
               Icons.shopping_basket_outlined,
               color: Colors.black,
@@ -102,7 +104,7 @@ class _ProductPageState extends State<ProductPage> {
               ),
             ),
             Container(
-              height: MediaQuery.of(context).size.height * 0.65,
+              height: MediaQuery.of(context).size.height * 0.6,
               width: MediaQuery.of(context).size.width,
               child: GridView.builder(
                 shrinkWrap: true,

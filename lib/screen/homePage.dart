@@ -1,8 +1,9 @@
-import 'package:ecommerce/pages/newArrival.dart';
-import 'package:ecommerce/pages/productPage.dart';
+import 'package:ecommerce/screen/productPage.dart';
 import 'package:ecommerce/widgets/card.dart';
 import 'package:flutter/material.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
+
+import 'newArrival.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -117,7 +118,9 @@ class _HomePageState extends State<HomePage> {
                   style: TextStyle(color: Colors.black, fontSize: 18),
                 ),
                 TextButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.pushNamed(context, '/newArrival');
+                    },
                     child: Text(
                       'View All',
                       style: TextStyle(color: Colors.grey, fontSize: 11),
@@ -209,13 +212,13 @@ class _HomePageState extends State<HomePage> {
                         color: Colors.black, fontWeight: FontWeight.w600),
                   ),
                   const GButton(
-                    icon: Icons.add_alarm_rounded,
+                    icon: Icons.notifications_none_rounded,
                     text: "Notify",
                     textStyle: TextStyle(
                         color: Colors.black, fontWeight: FontWeight.w600),
                   ),
                   const GButton(
-                    icon: Icons.supervised_user_circle,
+                    icon: Icons.person_outline,
                     text: "Profile",
                     textStyle: TextStyle(
                         color: Colors.black, fontWeight: FontWeight.w600),

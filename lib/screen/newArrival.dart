@@ -60,7 +60,9 @@ class _NewArrivalPageState extends State<NewArrivalPage> {
             child: FloatingActionButton(
               shape: CircleBorder(),
               backgroundColor: Colors.white,
-              onPressed: () {},
+              onPressed: () {
+                Navigator.pushNamed(context, '/shoppingCart');
+              },
               child: Icon(
                 Icons.shopping_basket_outlined,
                 color: Colors.black,

@@ -21,7 +21,9 @@ class _ShoppingCardPageState extends State<ShoppingCardPage> {
           child: FloatingActionButton.small(
             shape: CircleBorder(),
             backgroundColor: Colors.black,
-            onPressed: () {},
+            onPressed: () {
+              Navigator.of(context).pop();
+            },
             child: Icon(
               Icons.arrow_back_rounded,
               color: Colors.white,
@@ -53,6 +55,9 @@ class _ShoppingCardPageState extends State<ShoppingCardPage> {
               Text(
                 'Shopping Cart',
                 style: TextStyle(fontSize: 18),
+              ),
+              SizedBox(
+                height: height * 0.03,
               ),
               ShoppingCartWidget(),
               SizedBox(
@@ -152,18 +157,21 @@ class _ShoppingCardPageState extends State<ShoppingCardPage> {
                 ),
                 child: TextButton.icon(
                   onPressed: () {},
-                  label: const Text(
+                  label: Align(
+                    alignment: Alignment.centerRight,
+                    child: FloatingActionButton.small(
+                      shape: CircleBorder(),
+                      backgroundColor: Colors.white,
+                      onPressed: () {},
+                      child: Icon(
+                        Icons.arrow_forward,
+                        color: Color.fromRGBO(237, 187, 171, 1),
+                      ),
+                    ),
+                  ),
+                  icon: Text(
                     'Proceed to checkout',
                     style: TextStyle(color: Colors.white, fontSize: 14),
-                  ),
-                  icon: FloatingActionButton.small(
-                    shape: CircleBorder(),
-                    backgroundColor: Colors.white,
-                    onPressed: () {},
-                    child: Icon(
-                      Icons.arrow_back_rounded,
-                      color: Color.fromRGBO(237, 187, 171, 1),
-                    ),
                   ),
                 ),
               ),

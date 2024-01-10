@@ -29,7 +29,9 @@ class _ProductDetailPageState extends State<ProductDetailPage> {
               child: FloatingActionButton.small(
                 shape: CircleBorder(),
                 backgroundColor: Colors.black,
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.of(context).pop();
+                },
                 child: Icon(
                   Icons.arrow_back_rounded,
                   color: Colors.white,
@@ -42,7 +44,9 @@ class _ProductDetailPageState extends State<ProductDetailPage> {
                 child: FloatingActionButton(
                   shape: CircleBorder(),
                   backgroundColor: Colors.white,
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.pushNamed(context, '/shoppingCart');
+                  },
                   child: Icon(
                     Icons.shopping_basket_outlined,
                     color: Colors.black,

@@ -15,8 +15,7 @@ class _CategoryCardWidgetState extends State<CategoryCardWidget> {
       children: [
         InkWell(
           onTap: () {
-            // Navigator.pushNamed(context, '/product',
-            //     arguments: widget.id.toString());
+            Navigator.pushNamed(context, '/productDetail');
           },
           child: ClipRRect(
               child: Image.asset('assets/img1.png',

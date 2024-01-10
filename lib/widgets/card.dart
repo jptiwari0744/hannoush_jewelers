@@ -27,6 +27,7 @@ class _CardWidgetState extends State<CardWidget> {
             children: [
               InkWell(
                 onTap: () {
+                  Navigator.pushNamed(context, '/productDetail');
                   // Navigator.pushNamed(context, '/product',
                   //     arguments: widget.id.toString());
                 },
