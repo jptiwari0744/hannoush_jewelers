@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 
 class ShippingMethodWidget extends StatefulWidget {
-  const ShippingMethodWidget({super.key});
+  const ShippingMethodWidget(
+      {required this.customCall1, required this.customCall2});
+  final VoidCallback? customCall1;
+  final VoidCallback? customCall2;
 
   @override
   State<ShippingMethodWidget> createState() => _ShippingMethodWidgetState();
@@ -180,7 +183,9 @@ class _ShippingMethodWidgetState extends State<ShippingMethodWidget> {
                   ),
                 ),
                 child: TextButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    widget.customCall1!();
+                  },
                   child:
                       // isLoader
                       //     ? const Center(
@@ -204,7 +209,9 @@ class _ShippingMethodWidgetState extends State<ShippingMethodWidget> {
                   ),
                 ),
                 child: TextButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    widget.customCall2!();
+                  },
                   child:
                       // isLoader
                       //     ? const Center(

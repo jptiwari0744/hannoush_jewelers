@@ -4,7 +4,9 @@ import 'package:ecommerce/widgets/card.dart';
 import 'package:flutter/material.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 import 'package:provider/provider.dart';
-
+import 'package:carousel_slider/carousel_slider.dart';
+import 'package:dots_indicator/dots_indicator.dart';
+import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 import 'myProfilePage.dart';
 import 'newArrival.dart';
 
@@ -24,6 +26,7 @@ class _HomePageState extends State<HomePage> {
   }
 
   var selectedTab = 0;
+  CarouselController carouselController = CarouselController();
 
   void onBottomTab(int index) {
     setState(() {
@@ -31,6 +34,7 @@ class _HomePageState extends State<HomePage> {
     });
   }
 
+  var currentIndex = 0;
   @override
   Widget build(BuildContext context) {
     double height = MediaQuery.of(context).size.height;
@@ -62,59 +66,257 @@ class _HomePageState extends State<HomePage> {
                 )
               ],
             ),
-            Container(
-              height: MediaQuery.of(context).size.height * 0.23,
-              child: Stack(
-                alignment: Alignment.center,
-                children: [
-                  Center(
-                      child: Image.asset(
-                    'assets/home.png',
-                    width: width,
-                  )),
-                  Positioned(
-                      left: 40,
-                      top: 10,
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Padding(
-                            padding: const EdgeInsets.only(top: 10.0),
-                            child: Text(
-                              'Welcome,',
-                              style:
-                                  TextStyle(fontSize: 25, color: Colors.black),
-                            ),
-                          ),
-                          Text(
-                            'to Hannoush jewellers',
-                            style: TextStyle(fontSize: 15, color: Colors.black),
-                          ),
-                          Padding(
-                            padding: const EdgeInsets.only(top: 8.0),
-                            child: Text(
-                              'WE NEVER STOP CELEBRATING.',
-                              style:
-                                  TextStyle(fontSize: 11, color: Colors.grey),
-                            ),
-                          ),
-                          Padding(
-                            padding: const EdgeInsets.only(top: 8.0),
-                            child: ElevatedButton(
-                                style: ElevatedButton.styleFrom(
-                                    backgroundColor: Colors.black),
-                                onPressed: () {},
-                                child: Text(
-                                  'Shop Now!',
-                                  style: TextStyle(
-                                      color: Colors.white, fontSize: 11),
-                                )),
-                          )
-                        ],
-                      ))
-                ],
-              ),
+            Stack(
+              alignment: AlignmentDirectional.topCenter,
+              children: [
+                CarouselSlider(
+                    carouselController:
+                        carouselController, // Give the controller
+
+                    items: [
+                      Container(
+                        height: MediaQuery.of(context).size.height * 0.23,
+                        child: Stack(
+                          alignment: Alignment.center,
+                          children: [
+                            Center(
+                                child: Image.asset(
+                              'assets/home.png',
+                              width: width,
+                            )),
+                            Positioned(
+                                left: 40,
+                                top: 10,
+                                child: Column(
+                                  mainAxisAlignment: MainAxisAlignment.start,
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Padding(
+                                      padding: const EdgeInsets.only(top: 10.0),
+                                      child: Text(
+                                        'Welcome,',
+                                        style: TextStyle(
+                                            fontSize: 25, color: Colors.black),
+                                      ),
+                                    ),
+                                    Text(
+                                      'to Hannoush jewellers',
+                                      style: TextStyle(
+                                          fontSize: 15, color: Colors.black),
+                                    ),
+                                    Padding(
+                                      padding: const EdgeInsets.only(top: 8.0),
+                                      child: Text(
+                                        'WE NEVER STOP CELEBRATING.',
+                                        style: TextStyle(
+                                            fontSize: 11, color: Colors.grey),
+                                      ),
+                                    ),
+                                    Padding(
+                                      padding: const EdgeInsets.only(top: 8.0),
+                                      child: ElevatedButton(
+                                          style: ElevatedButton.styleFrom(
+                                              backgroundColor: Colors.black),
+                                          onPressed: () {},
+                                          child: Text(
+                                            'Shop Now!',
+                                            style: TextStyle(
+                                                color: Colors.white,
+                                                fontSize: 11),
+                                          )),
+                                    )
+                                  ],
+                                ))
+                          ],
+                        ),
+                      ),
+                      Container(
+                        height: MediaQuery.of(context).size.height * 0.23,
+                        child: Stack(
+                          alignment: Alignment.center,
+                          children: [
+                            Center(
+                                child: Image.asset(
+                              'assets/home.png',
+                              width: width,
+                            )),
+                            Positioned(
+                                left: 40,
+                                top: 10,
+                                child: Column(
+                                  mainAxisAlignment: MainAxisAlignment.start,
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Padding(
+                                      padding: const EdgeInsets.only(top: 10.0),
+                                      child: Text(
+                                        'Welcome,',
+                                        style: TextStyle(
+                                            fontSize: 25, color: Colors.black),
+                                      ),
+                                    ),
+                                    Text(
+                                      'to Hannoush jewellers',
+                                      style: TextStyle(
+                                          fontSize: 15, color: Colors.black),
+                                    ),
+                                    Padding(
+                                      padding: const EdgeInsets.only(top: 8.0),
+                                      child: Text(
+                                        'WE NEVER STOP CELEBRATING.',
+                                        style: TextStyle(
+                                            fontSize: 11, color: Colors.grey),
+                                      ),
+                                    ),
+                                    Padding(
+                                      padding: const EdgeInsets.only(top: 8.0),
+                                      child: ElevatedButton(
+                                          style: ElevatedButton.styleFrom(
+                                              backgroundColor: Colors.black),
+                                          onPressed: () {},
+                                          child: Text(
+                                            'Shop Now!',
+                                            style: TextStyle(
+                                                color: Colors.white,
+                                                fontSize: 11),
+                                          )),
+                                    )
+                                  ],
+                                ))
+                          ],
+                        ),
+                      ),
+                      Container(
+                        height: MediaQuery.of(context).size.height * 0.23,
+                        child: Stack(
+                          alignment: Alignment.center,
+                          children: [
+                            Center(
+                                child: Image.asset(
+                              'assets/home.png',
+                              width: width,
+                            )),
+                            Positioned(
+                                left: 40,
+                                top: 10,
+                                child: Column(
+                                  mainAxisAlignment: MainAxisAlignment.start,
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Padding(
+                                      padding: const EdgeInsets.only(top: 10.0),
+                                      child: Text(
+                                        'Welcome,',
+                                        style: TextStyle(
+                                            fontSize: 25, color: Colors.black),
+                                      ),
+                                    ),
+                                    Text(
+                                      'to Hannoush jewellers',
+                                      style: TextStyle(
+                                          fontSize: 15, color: Colors.black),
+                                    ),
+                                    Padding(
+                                      padding: const EdgeInsets.only(top: 8.0),
+                                      child: Text(
+                                        'WE NEVER STOP CELEBRATING.',
+                                        style: TextStyle(
+                                            fontSize: 11, color: Colors.grey),
+                                      ),
+                                    ),
+                                    Padding(
+                                      padding: const EdgeInsets.only(top: 8.0),
+                                      child: ElevatedButton(
+                                          style: ElevatedButton.styleFrom(
+                                              backgroundColor: Colors.black),
+                                          onPressed: () {},
+                                          child: Text(
+                                            'Shop Now!',
+                                            style: TextStyle(
+                                                color: Colors.white,
+                                                fontSize: 11),
+                                          )),
+                                    )
+                                  ],
+                                ))
+                          ],
+                        ),
+                      ),
+                    ],
+                    options: CarouselOptions(
+                        viewportFraction: 1,
+                        enableInfiniteScroll: false,
+                        // height: MediaQuery.of(context).size.height * 0.39,
+                        autoPlay: false,
+                        onPageChanged: (index, reason) {
+                          setState(() {
+                            currentIndex = index;
+                          });
+                        },
+                        autoPlayCurve: Curves.easeInOut,
+                        autoPlayAnimationDuration: Duration(milliseconds: 500),
+                        aspectRatio: 18 / 9)),
+                Positioned(
+                    bottom: 20,
+                    // left: 100,
+                    // left: MediaQuery.of(context).size.height * 0.08,
+                    child:
+                        // DotsIndicator(
+                        //   dotsCount: 3,
+                        //   position: currentIndex,
+                        //   onTap: (index) {
+                        //     carouselController.animateToPage(index);
+                        //   },
+                        //   decorator: DotsDecorator(
+                        //     color: Colors.white,
+                        //     activeColor: Colors.white,
+                        //     size: const Size.square(12.0),
+                        //     activeSize: const Size(24.0, 12.0),
+                        //     activeShape: RoundedRectangleBorder(
+                        //       borderRadius: BorderRadius.circular(12.0),
+                        //     ),
+                        //   ),
+                        // ),
+                        AnimatedSmoothIndicator(
+                      activeIndex: currentIndex,
+                      count: 3,
+                      effect: ScrollingDotsEffect(
+                        fixedCenter: true,
+                        activeStrokeWidth: 0.8,
+                        activeDotScale: 1.5,
+                        activeDotColor: Colors.white,
+                        dotColor: Colors.white,
+                        maxVisibleDots: 5,
+                        radius: 8,
+                        spacing: 20,
+                        dotHeight: 7,
+                        dotWidth: 7,
+                      ),
+                    )
+                    // SmoothPageIndicator(
+                    //       controller: carouselController,
+                    //       count: 3,
+                    //       effect: ScrollingDotsEffect(
+                    //         activeStrokeWidth: 2.6,
+                    //         activeDotScale: 1.3,
+                    //         maxVisibleDots: 5,
+                    //         radius: 8,
+                    //         spacing: 10,
+                    //         dotHeight: 12,
+                    //         dotWidth: 12,
+                    //       )),
+                    )
+                // Positioned(
+                //   bottom: MediaQuery.of(context).size.height * 0.15,
+                //   right: MediaQuery.of(context).size.height * 0.08,
+                //   child: IconButton(
+                //     onPressed: () {
+                //       carouselController.nextPage();
+                //     },
+                //     icon: Icon(Icons.keyboard_arrow_right),
+                //   ),
+                // )
+              ],
             ),
             SizedBox(
               height: height * 0.05,

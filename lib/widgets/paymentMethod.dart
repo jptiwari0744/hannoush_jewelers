@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 
 class PaymentMethod extends StatefulWidget {
-  const PaymentMethod({super.key});
+  PaymentMethod({required this.customCall});
+  final VoidCallback? customCall;
 
   @override
   State<PaymentMethod> createState() => _PaymentMethodState();
@@ -585,7 +586,9 @@ class _PaymentMethodState extends State<PaymentMethod> {
                     ),
                   ),
                   child: TextButton.icon(
-                    onPressed: () {},
+                    onPressed: () {
+                      widget.customCall!();
+                    },
                     label: Align(
                       alignment: Alignment.centerRight,
                       child: FloatingActionButton.small(

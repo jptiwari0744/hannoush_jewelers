@@ -5,9 +5,10 @@ import 'package:ecommerce/providers/loginProvider.dart';
 import 'package:ecommerce/routes/routes.dart';
 import 'package:ecommerce/screen/LoginPage.dart';
 import 'package:ecommerce/screen/checkoutPage.dart';
-import 'package:ecommerce/screen/customStepper.dart';
+import 'package:ecommerce/screen/customstepper.dart';
 import 'package:ecommerce/screen/homePage.dart';
 import 'package:ecommerce/screen/orderSummary.dart';
+import 'package:ecommerce/screen/productDetail.dart';
 import 'package:ecommerce/theme/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:graphql_flutter/graphql_flutter.dart';
@@ -76,7 +77,7 @@ class _AppRootState extends State<AppRoot> {
     // if (token != null) {
     //   content = CheckOutPage();
     // }
-    return CheckOutPage();
+    return ProductDetailPage();
   }
 }
 

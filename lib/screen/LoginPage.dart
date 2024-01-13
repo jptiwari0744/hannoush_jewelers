@@ -74,7 +74,10 @@ class _LoginPageState extends State<LoginPage> {
                             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              Text('Email'),
+                              Text(
+                                'Email',
+                                style: TextStyle(fontWeight: FontWeight.w500),
+                              ),
                               Padding(
                                 padding: const EdgeInsets.only(
                                     top: 12.0, bottom: 12),

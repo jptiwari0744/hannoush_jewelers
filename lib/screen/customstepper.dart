@@ -1,11 +1,11 @@
 import 'package:ecommerce/screen/numberstepper.dart';
 import 'package:ecommerce/widgets/paymentMethod.dart';
+import 'package:ecommerce/widgets/shippingAddress.dart';
+import 'package:ecommerce/widgets/shippingMethod.dart';
 import 'package:flutter/material.dart';
 
 class CustomStepper extends StatefulWidget {
-  final String title;
-
-  const CustomStepper({super.key, required this.title});
+  const CustomStepper({super.key});
 
   @override
   _CustomStepperState createState() => _CustomStepperState();
@@ -38,8 +38,21 @@ class _CustomStepperState extends State<CustomStepper> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       appBar: AppBar(
-        title: Text(widget.title),
+        backgroundColor: Colors.white,
+        leading: Padding(
+          padding: EdgeInsets.all(8.0),
+          child: FloatingActionButton.small(
+            shape: CircleBorder(),
+            backgroundColor: Colors.black,
+            onPressed: () {},
+            child: Icon(
+              Icons.arrow_back_rounded,
+              color: Colors.white,
+            ),
+          ),
+        ),
       ),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.start,
@@ -57,35 +70,47 @@ class _CustomStepperState extends State<CustomStepper> {
             height: 30,
           ),
           Container(
-            child: currentStep <= stepLength
-                ? Expanded(child: PaymentMethod())
-                : const Text(
-                    "Completed!",
-                    style: TextStyle(
-                      fontSize: 30,
-                      color: Colors.blue,
-                    ),
-                  ),
+            child: currentStep == 1
+                ? Expanded(child: PaymentMethod(customCall: () {
+                    next();
+                  }))
+                : const Text(''),
           ),
-          currentStep == 1
-              ? Text('')
-              : ElevatedButton(
-                  onPressed: currentStep == 1
-                      ? null
-                      : () {
-                          back();
-                        },
-                  child: Text('Back'),
-                ),
-          ElevatedButton(
-            onPressed: () {
-              next();
-            },
-            child: Text(
-              currentStep == stepLength ? 'Finish' : 'Next',
-              style: TextStyle(color: Colors.white),
-            ),
+          Container(
+            child: currentStep == 2
+                ? Expanded(
+                    child: ShippingMethodWidget(customCall1: () {
+                    back();
+                  }, customCall2: () {
+                    next();
+                  }))
+                : const Text(''),
           ),
+          Container(
+            child: currentStep == 3
+                ? Expanded(child: ShippingAddress())
+                : const Text(''),
+          ),
+
+          // currentStep == 1
+          //     ? Text('')
+          //     : ElevatedButton(
+          //         onPressed: currentStep == 1
+          //             ? null
+          //             : () {
+          //                 back();
+          //               },
+          //         child: Text('Back'),
+          //       ),
+          // ElevatedButton(
+          //   onPressed: () {
+          //     next();
+          //   },
+          //   child: Text(
+          //     currentStep == stepLength ? 'Finish' : 'Next',
+          //     style: TextStyle(color: Colors.white),
+          //   ),
+          // ),
         ],
       ),
     );
