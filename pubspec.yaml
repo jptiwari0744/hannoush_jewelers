@@ -36,6 +36,15 @@ dependencies:
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.2
   google_nav_bar: ^5.0.6
+  graphql_flutter: ^5.2.0-beta.6
+  provider: ^6.1.1
+  json_annotation: ^4.8.1
+  flutter_spinkit: ^5.2.0
+  shared_preferences: ^2.2.2
+
+  easy_stepper: ^0.8.3
+  dotted_border: ^2.1.0
+  flutter_credit_card: ^4.0.1
 
 dev_dependencies:
   flutter_test:
@@ -48,16 +57,17 @@ dev_dependencies:
   # rules and activating additional ones.
   flutter_lints: ^2.0.0
   google_fonts: ^6.1.0
-
+  build_runner: ^2.0.5
+  json_serializable: ^6.7.1
   flutter_native_splash: ^2.3.9
 flutter_native_splash:
-  image: assets/Splash-Screen.png
-  color: "#FFFFFF"
-  fullscreen: true
+  image: assets/logo1.png
+  color: "#ffffff"
+#  fullscreen: true
   android_12:
-    icon_background_color: "#FFFFFF"
-    image: assets/Splash-Screen.png
-    fullscreen: true
+    icon_background_color: "#ffffff"
+    image: assets/logo1.png
+#    fullscreen: true
   android: true
   ios: true
   web: true

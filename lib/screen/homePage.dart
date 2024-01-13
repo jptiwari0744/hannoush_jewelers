@@ -1,8 +1,11 @@
+import 'package:ecommerce/providers/homeProvider.dart';
 import 'package:ecommerce/screen/productPage.dart';
 import 'package:ecommerce/widgets/card.dart';
 import 'package:flutter/material.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
+import 'package:provider/provider.dart';
 
+import 'myProfilePage.dart';
 import 'newArrival.dart';
 
 class HomePage extends StatefulWidget {
@@ -13,6 +16,13 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  @override
+  void initState() {
+    Provider.of<HomeProvider>(context, listen: false).homeApi(context);
+    // TODO: implement initState
+    super.initState();
+  }
+
   var selectedTab = 0;
 
   void onBottomTab(int index) {
@@ -149,9 +159,9 @@ class _HomePageState extends State<HomePage> {
       content = NewArrivalPage();
     }
 
-    // if (selectedTab == 3) {
-    //   content = ();
-    //  }
+    if (selectedTab == 3) {
+      content = MyProfilePage();
+    }
     return SafeArea(
         top: true,
         child: Scaffold(
